@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lingua - Urdu English Translator</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="/" class="logo">
+            <span class="logo-icon">L</span>
+            Lingua<span class="dot">.</span>
+        </a>
+
+        <div class="nav-label">
+            <span class="status-dot"></span>
+            AI Translation
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <section class="hero">
+
+            <span class="eyebrow">LANGUAGE WITHOUT BARRIERS</span>
+
+            <h1>Words connect <span>worlds.</span></h1>
+
+            <p>
+                Translate between Urdu and English with
+                intelligent language processing.
+            </p>
+
+        </section>
+
+
+        <section class="translator-card">
+
+            <div class="language-bar">
+
+                <select id="direction" class="language-select">
+
+                    <option value="en-ur">
+                        English → اردو
+                    </option>
+
+                    <option value="ur-en">
+                        اردو → English
+                    </option>
+
+                </select>
+
+                <button id="swapBtn" class="swap-btn"
+                        title="Switch languages">
+                    ⇄
+                </button>
+
+                <span class="engine-label">
+                    MARIANMT NLP
+                </span>
+
+            </div>
+
+
+            <div class="translation-area">
+
+                <div class="input-panel">
+
+                    <div class="panel-heading">
+                        <span id="sourceLabel">English</span>
+                        <span class="panel-tag">SOURCE</span>
+                    </div>
+
+                    <textarea
+                        id="inputText"
+                        placeholder="Type or paste your text here..."
+                        maxlength="3000"
+                        dir="auto"
+                    ></textarea>
+
+                    <div class="input-footer">
+
+                        <span id="charCount">0 / 3000</span>
+
+                        <button id="clearBtn" class="text-btn">
+                            Clear text
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="output-panel">
+
+                    <div class="panel-heading">
+                        <span id="targetLabel">اردو</span>
+                        <span class="panel-tag">TRANSLATION</span>
+                    </div>
+
+                    <div id="outputText"
+                         class="output-text"
+                         dir="auto">
+                        Your translation will appear here...
+                    </div>
+
+                    <div class="output-footer">
+
+                        <span id="outputStatus">
+                            Ready to translate
+                        </span>
+
+                        <button id="copyBtn"
+                                class="copy-btn"
+                                disabled>
+                            Copy ↗
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="action-area">
+
+                <button id="translateBtn" class="translate-btn">
+                    <span id="btnText">Translate Text</span>
+                    <span>→</span>
+                </button>
+
+                <p id="errorMessage" class="error-message"></p>
+
+            </div>
+
+        </section>
+
+
+        <section class="examples">
+
+            <p>TRY AN EXAMPLE</p>
+
+            <button class="example-btn"
+                    data-text="I want to become a software engineer.">
+                Software Engineer
+            </button>
+
+            <button class="example-btn"
+                    data-text="Education is the key to success.">
+                Education
+            </button>
+
+            <button class="example-btn"
+                    data-text="Artificial intelligence is changing the world.">
+                Artificial Intelligence
+            </button>
+
+        </section>
+
+
+        <footer>
+            <p>Powered by Python, Flask & MarianMT</p>
+            <p>Built for language learners ❤️</p>
+        </footer>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

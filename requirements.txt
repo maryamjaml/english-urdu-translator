@@ -1,0 +1,6 @@
+
+Flask
+transformers>=4.40,<5.0
+torch
+sentencepiece
+sacremoses
